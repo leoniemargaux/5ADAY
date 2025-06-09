@@ -1,0 +1,73 @@
+html, body {
+    font-family: "Times New Roman", Times, serif;
+    margin: 0;
+    background-color: #050A30;
+}
+
+.banner {
+    background-color: #050A30;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.progress-tracker {  
+    min-height: 100%;
+    background-color: #050A30;
+    border-radius: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.word-count {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 0;
+    margin: 0;
+}
+
+.word-count-boxes {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+}
+
+input[type="checkbox"] {
+    display: none;
+    margin: 0;
+    padding: 0;
+}
+
+input[type="checkbox"] + label {
+    display: block;
+    cursor: pointer;
+    padding: 12px; 
+    border-radius: 5px;
+    background-image: url('sad.png');
+    text-align: center;
+}
+
+input[type="checkbox"]:checked + label {
+    background-image: url('happy.png');
+    color: white;
+}
+
+.word-box-row {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.word-box-row label {
+    width: 24%;
+    aspect-ratio: 1/1;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    padding: 0; 
+    margin: 1%; 
+    border: none; 
+}
