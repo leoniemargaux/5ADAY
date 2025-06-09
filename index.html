@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <title>Did Leonie eat her 5-a-day ???</title>
+    <link rel="apple-touch-icon" href="icon.png">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-tracker">
+        <div class="word-count">
+            <div class="word-count-boxes">
+                <div class="checkbox-row">
+                    <input type="checkbox" id="1" unchecked><label for="1">1 veggie!!!</label>
+                </div>
+                <div class="checkbox-row">
+                    <input type="checkbox" id="2" unchecked><label for="2">2 veggies!!!</label>
+                </div>
+                <div class="checkbox-row">
+                    <input type="checkbox" id="3" unchecked><label for="3">3 veggies!!!</label>
+                </div>
+                <div class="checkbox-row">
+                    <input type="checkbox" id="4" unchecked><label for="4">4 veggies!!!</label>
+                </div>
+                <div class="checkbox-row">
+                    <input type="checkbox" id="5" unchecked><label for="5">5 veggies!!!</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach(function(checkbox) {
+                const checkboxId = checkbox.getAttribute('id');
+                const checked = localStorage.getItem(checkboxId) === 'true';
+                checkbox.checked = checked;
+            });
+
+            checkboxes.forEach(function(checkbox) {
+                checkbox.addEventListener('change', function() {
+                    const checkboxId = checkbox.getAttribute('id');
+                    localStorage.setItem(checkboxId, checkbox.checked);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
